@@ -1,57 +1,297 @@
-Hello Nano
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to My GitHub Page</title>
+    <title>Hello from Nano | GitHub Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: #333;
-            max-width: 800px;
+            color: var(--dark);
+            background-color: #f9f9f9;
+            position: relative;
+            min-height: 100vh;
+        }
+        
+        .wrapper {
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 0 20px;
         }
-        h1 {
-            color: #0366d6;
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+            margin-bottom: 40px;
         }
+        
+        header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+        
         .container {
-            background-color: #f6f8fa;
-            border-radius: 5px;
-            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            padding: 30px;
+            margin-bottom: 40px;
+        }
+        
+        section {
+            margin-bottom: 30px;
+        }
+        
+        h2 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--secondary);
+        }
+        
+        p {
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+        }
+        
+        .profile-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        @media (min-width: 768px) {
+            .profile-card {
+                flex-direction: row;
+                text-align: left;
+                align-items: flex-start;
+            }
+        }
+        
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--light);
+            box-shadow: var(--shadow);
+            margin-bottom: 20px;
+        }
+        
+        @media (min-width: 768px) {
+            .profile-image {
+                margin-right: 30px;
+                margin-bottom: 0;
+            }
+        }
+        
+        .profile-info {
+            flex: 1;
+        }
+        
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
             margin-top: 20px;
+        }
+        
+        .project-card {
+            background-color: var(--light);
+            border-radius: 8px;
+            padding: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .project-card h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+        }
+        
+        .contact-item i {
+            margin-right: 8px;
+            color: var(--secondary);
+        }
+        
+        footer {
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+        
+        a {
+            color: var(--secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        a:hover {
+            color: var(--accent);
+        }
+        
+        ul {
+            list-style-type: none;
+        }
+        
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .skill-tag {
+            background-color: var(--secondary);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .content {
+            padding-bottom: 80px; /* Space for footer */
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Welcome to My GitHub Page</h1>
+        <div class="wrapper">
+            <h1>Hello from Nano</h1>
+            <p>Welcome to my personal GitHub page where I showcase my projects and skills</p>
+        </div>
     </header>
     
-    <div class="container">
-        <h2>About Me</h2>
-        <p>Hello! I'm [Your Name], a [Your Profession/Title] passionate about [Your Interests].</p>
-        <img src="images/natsu.jpeg" alt="Description of the image" width="300" height="200">
-        <h2>My Projects</h2>
-        <ul>
-            <li><a href="#">Project 1</a> - Brief description</li>
-            <li><a href="#">Project 2</a> - Brief description</li>
-            <li><a href="#">Project 3</a> - Brief description</li>
-        </ul>
-        
-        <h2>Contact</h2>
-        <p>Feel free to reach out to me:</p>
-        <ul>
-            <li>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></li>
-            <li>GitHub: <a href="https://github.com/yourusername">github.com/yourusername</a></li>
-            <li>LinkedIn: <a href="https://www.linkedin.com/in/yourprofile">linkedin.com/in/yourprofile</a></li>
-        </ul>
+    <div class="content">
+        <div class="wrapper">
+            <div class="container">
+                <section>
+                    <h2>About Me</h2>
+                    <div class="profile-card">
+                        <img src="images/natsu.jpeg" alt="Profile Picture" class="profile-image">
+                        <div class="profile-info">
+                            <p>Hello! I'm Zhou Winnie Lu, a Risk Management Analyst passionate about data and business analysis. I love building projects that solve real-world problems and am constantly expanding my skill set to stay current with industry trends.</p>
+                            <p>Based in Massachusets, I enjoy collaborating on innovative projects and contributing to open-source initiatives.</p>
+                            <div class="skills">
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">SQL</span>
+                                <span class="skill-tag">Tableau</span>
+                                <span class="skill-tag">PowerBI</span>
+                                <span class="skill-tag">VBA</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <section>
+                    <h2>Featured Projects</h2>
+                    <div class="projects">
+                        <div class="project-card">
+                            <h3>Project 1</h3>
+                            <p>A comprehensive solution for [specific problem] that utilizes [technologies] to deliver [key benefits].</p>
+                            <a href="#" target="_blank">View Project <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                        <div class="project-card">
+                            <h3>Project 2</h3>
+                            <p>An innovative approach to [specific domain] featuring [key features] and optimized for [performance metric].</p>
+                            <a href="#" target="_blank">View Project <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                        <div class="project-card">
+                            <h3>Project 3</h3>
+                            <p>A collaborative effort focused on [project goal] that demonstrates [technical skills] and [other highlights].</p>
+                            <a href="#" target="_blank">View Project <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </section>
+                
+                <section>
+                    <h2>Get In Touch</h2>
+                    <p>I'm always interested in new opportunities, collaborations, or just a friendly chat about technology.</p>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:your.email@example.com">zhouwinnielu@gmail.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-github"></i>
+                            <a href="https://github.com/yourusername" target="_blank">github.com/zhouwinnielu</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-linkedin"></i>
+                            <a href="https://www.linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/zhouwinnielu</a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
     </div>
     
     <footer>
-        <p>&copy; 2025 [Your Name]. All rights reserved.</p>
+        <div class="wrapper">
+            <p>&copy; 2025 Zhou Winnie Lu and Nano the Shiba Inu. All rights reserved.</p>
+        </div>
     </footer>
 </body>
 </html>
